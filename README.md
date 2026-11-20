@@ -27,14 +27,27 @@ times from the Dominica Sperm Whale Project tables.
 * `describe_vowels.py`: the label-blind join and structure description (job
   `vowel-describe-v1`). It found 1,134 labelled, timed codas from 13 whales in 19
   whale-deployments.
-* Next: a grader, published before the analysis job is filed, then `RESULTS-VOWEL.md`.
+* `test_vowel_results.py`: the grader, published 2026-11-20 before the analysis job had
+  produced any result. It is standalone (stdlib only, it does not import `vowel_test.py`)
+  and re-derives from the raw output the verdict, Q = S/E, the place of every p value on its
+  permutation lattice and inside its null range, the size and power counts, the matched eps,
+  the predictions and the Brier score. It also checks that all pair, bout and per-whale counts
+  add up, and it fixes the exact lines `RESULTS-VOWEL.md` must contain
+  (`python test_vowel_results.py --render <vowel_results.json> <RESULTS-VOWEL.md>`).
+* `fetch_code.py`: the first step of the analysis job `vowel-test-v1`. It downloads
+  `vowel_test.py`, its tests and `describe_vowels.py` pinned at commit `eff4365` (the
+  registration commit), and it stops before computing anything unless the grader above is
+  public and identical to the job's copy.
+* Next: `results/vowel/vowel_results.json` and `RESULTS-VOWEL.md`.
 
 ## Reproduce
 ```
 pip install numpy==2.1.3
 python -m unittest -v test_vowel_test
+python -m unittest -v test_vowel_results
 python vowel_test.py --selftest --out-dir ./out
 python vowel_test.py --data-dir ./data --out-dir ./out
+python test_vowel_results.py --render ./out/vowel_results.json ./out/RESULTS-VOWEL.md
 ```
 The data download from OSF (project a32ke, file 8jmp7) and from
 github.com/pratyushasharma/sw-combinatoriality, and they are checked by md5. That repository
