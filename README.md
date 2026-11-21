@@ -1,8 +1,10 @@
 # whale-vowel-test
 
 An open, pre-registered test of whether sperm whale "coda vowels" are a property of each coda
-or a state of the moment that persists through bouts and tag deployments, and (second test,
-registered 2026-11-21) whether the reported "long and short vowels" hold within a bout.
+or a state of the moment that persists through bouts and tag deployments; (second test,
+registered 2026-11-21) whether the reported "long and short vowels" hold within a bout; and
+(third test, registered 2026-11-21) whether the reported "coarticulation" between codas is
+carryover or the symmetric pattern that label noise also produces.
 
 MV2 of Munim, Inc. (mv2@munimtech.com). Made with AI agents; no human expert has reviewed it
 yet. Code Apache-2.0, text CC BY 4.0.
@@ -29,6 +31,16 @@ few, the same tag deployment), calibrated for size and power on the real timelin
 false-alarm rate of the published-style test when vowels come in bouts and have no effect at
 all, and whether the short/long split of i-codas is itself clustered in time. The grader
 `test_vowel2_results.py` is published with the registration, before any result.
+
+## Test 3 (registered 2026-11-21, job waiting): coarticulation, carryover or symmetric?
+The same paper reports that when the vowel changes between two codas, the first click of the new
+coda more often mismatches its own coda's label. Carryover predicts that only that first click is
+affected. If labels are sometimes wrong while vowels persist, or the state switches mid-coda, the
+last click of the previous coda should mismatch its own label just as often at a change.
+`VOWEL3-PREREG.md` registers the mirror test on the authors' own pair file
+(`focal-coarticulation-metadata.csv`, commit be751b8): first-click and last-click mismatch
+contrasts on the same pairs, their difference, a within-deployment permutation null, and size and
+power from symmetric and carryover worlds built on the real pairs.
 
 ## Why
 Begus and colleagues (2025, Open Mind; 2026, Proc R Soc B) report that sperm whale codas come
@@ -62,21 +74,25 @@ times from the Dominica Sperm Whale Project tables.
   `gate.py`: test 2 (registration, analysis, unit tests, grader and renderer of
   `RESULTS-DUR.md`, and the job's first step, which stops unless these files are public and
   identical to the job's copies).
+* `VOWEL3-PREREG.md`, `vowel3_test.py`, `test_vowel3_test.py`, `gate3.py`: test 3
+  (registration; analysis, which also renders `RESULTS-COART.md`; unit tests; the job's first
+  step).
 
 ## Reproduce
 ```
 pip install numpy==2.1.3 diptest==0.12.0
-python -m unittest -v test_vowel_test test_vowel2_test
+python -m unittest -v test_vowel_test test_vowel2_test test_vowel3_test
 python -m unittest -v test_vowel_results test_vowel2_results
 python vowel_test.py --data-dir ./data --out-dir ./out
 python test_vowel_results.py --render ./out/vowel_results.json ./out/RESULTS-VOWEL.md
 python vowel2_test.py --data-dir ./data --out-dir ./out
 python test_vowel2_results.py --render ./out/vowel2_results.json ./out/RESULTS-DUR.md
+python vowel3_test.py --data-dir ./data --out-dir ./out
 ```
-The data download from OSF (project a32ke, file 8jmp7) and from
-github.com/pratyushasharma/sw-combinatoriality, and they are checked by md5. That repository
-has no licence file, so its tables are not redistributed here. Only aggregate counts are
-published.
+The data download from OSF (project a32ke, file 8jmp7), from
+github.com/pratyushasharma/sw-combinatoriality and from github.com/Project-CETI/
+coda-vowel-phonology, and they are checked by md5. Those repositories have no licence file, so
+their tables are not redistributed here. Only aggregate counts are published.
 
 ## Credit
 Claim and hand labels: Begus, Sprouse, Leban, Silva and Gero (2025, doi 10.1162/opmi.a.252);
