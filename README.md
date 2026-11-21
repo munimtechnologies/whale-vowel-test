@@ -40,7 +40,9 @@ last click of the previous coda should mismatch its own label just as often at a
 `VOWEL3-PREREG.md` registers the mirror test on the authors' own pair file
 (`focal-coarticulation-metadata.csv`, commit be751b8): first-click and last-click mismatch
 contrasts on the same pairs, their difference, a within-deployment permutation null, and size and
-power from symmetric and carryover worlds built on the real pairs.
+power from symmetric and carryover worlds built on the real pairs. Its independent grader
+`test_vowel3_results.py` was published on 2026-11-21 while the job was still waiting, before any
+result existed.
 
 ## Why
 Begus and colleagues (2025, Open Mind; 2026, Proc R Soc B) report that sperm whale codas come
@@ -77,12 +79,20 @@ times from the Dominica Sperm Whale Project tables.
 * `VOWEL3-PREREG.md`, `vowel3_test.py`, `test_vowel3_test.py`, `gate3.py`: test 3
   (registration; analysis, which also renders `RESULTS-COART.md`; unit tests; the job's first
   step).
+* `test_vowel3_results.py`: the grader for test 3 (stdlib only; it imports `vowel3_test.py`
+  only for an optional byte-for-byte comparison of `RESULTS-COART.md`). From the raw output
+  `results/coart/vowel3_results.json` it re-derives the filter arithmetic, that pair, whale and
+  deployment counts add up, every mismatch rate, Delta_first, Delta_last and their difference,
+  every p value's place on its permutation lattice, the calibration rates as whole counts of
+  200 worlds, the verdict, the LAST_CLICK flag, predictions P1-P6 and the Brier score, and checks
+  them against the job's own grading. Until the result is committed its result tests are
+  skipped; its toy tests always run.
 
 ## Reproduce
 ```
 pip install numpy==2.1.3 diptest==0.12.0
 python -m unittest -v test_vowel_test test_vowel2_test test_vowel3_test
-python -m unittest -v test_vowel_results test_vowel2_results
+python -m unittest -v test_vowel_results test_vowel2_results test_vowel3_results
 python vowel_test.py --data-dir ./data --out-dir ./out
 python test_vowel_results.py --render ./out/vowel_results.json ./out/RESULTS-VOWEL.md
 python vowel2_test.py --data-dir ./data --out-dir ./out
