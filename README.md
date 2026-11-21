@@ -1,12 +1,13 @@
 # whale-vowel-test
 
 An open, pre-registered test of whether sperm whale "coda vowels" are a property of each coda
-or a state of the moment that persists through bouts and tag deployments.
+or a state of the moment that persists through bouts and tag deployments, and (second test,
+registered 2026-11-21) whether the reported "long and short vowels" hold within a bout.
 
 MV2 of Munim, Inc. (mv2@munimtech.com). Made with AI agents; no human expert has reviewed it
 yet. Code Apache-2.0, text CC BY 4.0.
 
-## Result (graded 2026-11-21)
+## Result 1 (graded 2026-11-21)
 **VOWELS_CLUSTER_STRONGLY.** Within bouts, neighbouring codas of one whale switched vowel 75
 times, where shuffling within whale x deployment x coda type predicts 352.23 (Q = 0.2129,
 p_low = 0.0001, 9,999 permutations; 1,134 codas, 13 whales, 19 deployments, 1,040 within-bout
@@ -17,6 +18,17 @@ the "vowel" claim, not proof of an artefact: the label behaves like a state held
 (recording geometry, depth or a vocal register), not an independent choice per coda.
 See `RESULTS-VOWEL.md` (rendered and checked by the grader) and `READING-VOWEL.md` (the
 registered readings applied, written after the result).
+
+## Test 2 (registered 2026-11-21, job waiting): long and short vowels within a bout
+Begus et al. (2026, Proc R Soc B) report that a-codas are longer than i-codas and that i-codas
+come in a short and a long form. Their public R code compares durations across all 1+1+3 codas of
+four whales with only a whale effect. Because vowels persist through bouts (result 1), that
+contrast may compare bouts and recording days rather than vowels. `VOWEL2-PREREG.md` registers
+a test of the duration difference between a- and i-codas of the same bout (or, if bouts are too
+few, the same tag deployment), calibrated for size and power on the real timeline, plus the
+false-alarm rate of the published-style test when vowels come in bouts and have no effect at
+all, and whether the short/long split of i-codas is itself clustered in time. The grader
+`test_vowel2_results.py` is published with the registration, before any result.
 
 ## Why
 Begus and colleagues (2025, Open Mind; 2026, Proc R Soc B) report that sperm whale codas come
@@ -46,15 +58,20 @@ times from the Dominica Sperm Whale Project tables.
   registration commit `eff4365` and stops unless the grader is public and identical.
 * `results/vowel/vowel_results.json`: the raw output of job `vowel-test-v1` (2026-11-21),
   committed unchanged.
+* `VOWEL2-PREREG.md`, `vowel2_test.py`, `test_vowel2_test.py`, `test_vowel2_results.py`,
+  `gate.py`: test 2 (registration, analysis, unit tests, grader and renderer of
+  `RESULTS-DUR.md`, and the job's first step, which stops unless these files are public and
+  identical to the job's copies).
 
 ## Reproduce
 ```
-pip install numpy==2.1.3
-python -m unittest -v test_vowel_test
-python -m unittest -v test_vowel_results
-python vowel_test.py --selftest --out-dir ./out
+pip install numpy==2.1.3 diptest==0.12.0
+python -m unittest -v test_vowel_test test_vowel2_test
+python -m unittest -v test_vowel_results test_vowel2_results
 python vowel_test.py --data-dir ./data --out-dir ./out
 python test_vowel_results.py --render ./out/vowel_results.json ./out/RESULTS-VOWEL.md
+python vowel2_test.py --data-dir ./data --out-dir ./out
+python test_vowel2_results.py --render ./out/vowel2_results.json ./out/RESULTS-DUR.md
 ```
 The data download from OSF (project a32ke, file 8jmp7) and from
 github.com/pratyushasharma/sw-combinatoriality, and they are checked by md5. That repository
@@ -63,5 +80,6 @@ published.
 
 ## Credit
 Claim and hand labels: Begus, Sprouse, Leban, Silva and Gero (2025, doi 10.1162/opmi.a.252);
-Begus, Dabkowski, Sprouse, Gruber and Gero (2026, doi 10.1098/rspb.2025.2994); Project CETI.
-Recording tables: Sharma et al. (2024) and the Dominica Sperm Whale Project.
+Begus, Dabkowski, Sprouse, Gruber and Gero (2026, doi 10.1098/rspb.2025.2994); Project CETI
+(github.com/Project-CETI/coda-vowel-phonology). Recording tables: Sharma et al. (2024) and the
+Dominica Sperm Whale Project.
