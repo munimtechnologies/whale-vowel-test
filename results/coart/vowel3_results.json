@@ -1,0 +1,231 @@
+{
+ "brier": 0.26,
+ "calibration": {
+  "B": 999,
+  "R": 200,
+  "W0": {
+   "asym_reject": 0.205,
+   "asym_reverse_reject": 0.15,
+   "delta": 0.0,
+   "first_reject": 0.76
+  },
+  "W1_full": {
+   "asym_reject": 0.735,
+   "asym_reverse_reject": 0.005,
+   "delta": 0.15782122905027934,
+   "first_reject": 0.995
+  },
+  "W1_half": {
+   "asym_reject": 0.39,
+   "asym_reverse_reject": 0.015,
+   "delta": 0.07891061452513967,
+   "first_reject": 0.985
+  },
+  "delta_full": 0.15782122905027934
+ },
+ "change_by_whale": {
+  "ATWOOD": {
+   "C": 7,
+   "N": 297
+  },
+  "FORK": {
+   "C": 18,
+   "N": 221
+  },
+  "PINCHY": {
+   "C": 13,
+   "N": 103
+  },
+  "TBB": {
+   "C": 6,
+   "N": 95
+  }
+ },
+ "data": {
+  "bytes": 346249,
+  "issues": {
+   "bad_deltasec": 0,
+   "coart_conflicts": 0,
+   "no_type": 0,
+   "other_whale": 179,
+   "out_of_window": 158,
+   "rows": 1097
+  },
+  "md5": "5e971e33d2e78dc817ae48751c533866",
+  "url": "https://raw.githubusercontent.com/Project-CETI/coda-vowel-phonology/be751b8761c87813754dba10ad7068a9e71367c0/focal-coarticulation-metadata.csv"
+ },
+ "deployments": {
+  "ATWOOD|2015-02-03 11:20:26": {
+   "C": 5,
+   "N": 113
+  },
+  "ATWOOD|2015-03-02 11:20:26": {
+   "C": 2,
+   "N": 184
+  },
+  "FORK|2015-03-19 07:47:55": {
+   "C": 4,
+   "N": 52
+  },
+  "FORK|2015-03-26 08:53:04": {
+   "C": 12,
+   "N": 147
+  },
+  "FORK|2015-03-31 08:20:59": {
+   "C": 2,
+   "N": 22
+  },
+  "PINCHY|2015-03-31 08:56:49": {
+   "C": 13,
+   "N": 103
+  },
+  "TBB|2014-04-29 10:40:20": {
+   "C": 4,
+   "N": 43
+  },
+  "TBB|2015-01-04 08:36:36": {
+   "C": 2,
+   "N": 40
+  },
+  "TBB|2015-07-04 10:59:18": {
+   "C": 0,
+   "N": 12
+  }
+ },
+ "flags": {
+  "LAST_CLICK_ALSO_MISMATCHES": true
+ },
+ "gap_halves": {
+  "halves": {
+   "gap_gt_median": {
+    "first": 0.20436269525834183,
+    "last": 0.1635086422035308,
+    "n": 380,
+    "n_change": 31
+   },
+   "gap_le_median": {
+    "first": 0.05575351079438273,
+    "last": -0.029343953049675117,
+    "n": 380,
+    "n_change": 13
+   }
+  },
+  "median_deltasec": 3.41349165
+ },
+ "main": {
+  "asym": {
+   "B": 9999,
+   "null_mean": -0.0008961536072347716,
+   "null_sd": 0.05254055797508114,
+   "obs": 0.05383443372270188,
+   "p_high": 0.1999,
+   "p_low": 0.9005
+  },
+  "first": {
+   "B": 9999,
+   "null_mean": 0.0055720020960958435,
+   "null_sd": 0.04628049051625911,
+   "obs": 0.15782122905027934,
+   "p_high": 0.0035,
+   "p_low": 0.9995
+  },
+  "last": {
+   "B": 9999,
+   "null_mean": 0.0064681557033306174,
+   "null_sd": 0.047958648754060196,
+   "obs": 0.10398679532757746,
+   "p_high": 0.0433,
+   "p_low": 0.9841
+  }
+ },
+ "n_change": 44,
+ "n_deployments": 9,
+ "n_nochange": 716,
+ "n_paired": 760,
+ "n_rows": 760,
+ "n_whales": 4,
+ "predictions": {
+  "P1": {
+   "outcome": true,
+   "prior": 0.75
+  },
+  "P2": {
+   "outcome": true,
+   "prior": 0.55
+  },
+  "P3": {
+   "outcome": true,
+   "prior": 0.65
+  },
+  "P4": {
+   "outcome": false,
+   "prior": 0.9
+  },
+  "P5": {
+   "outcome": true,
+   "prior": 0.55
+  },
+  "P6": {
+   "outcome": false,
+   "prior": 0.4
+  }
+ },
+ "seconds": 8.0,
+ "settings": {
+  "B": 9999,
+  "B_cal": 999,
+  "R": 200,
+  "seed": 20261121
+ },
+ "t0": {
+  "first_all_rows": {
+   "C": {
+    "mismatches": 11,
+    "n": 44,
+    "rate": 0.25
+   },
+   "N": {
+    "mismatches": 66,
+    "n": 716,
+    "rate": 0.09217877094972067
+   }
+  },
+  "first_paired": {
+   "C": {
+    "mismatches": 11,
+    "n": 44,
+    "rate": 0.25
+   },
+   "N": {
+    "mismatches": 66,
+    "n": 716,
+    "rate": 0.09217877094972067
+   }
+  },
+  "last_all_rows": {
+   "C": {
+    "mismatches": 9,
+    "n": 44,
+    "rate": 0.20454545454545456
+   },
+   "N": {
+    "mismatches": 72,
+    "n": 716,
+    "rate": 0.1005586592178771
+   }
+  },
+  "last_paired": {
+   "C": {
+    "mismatches": 9,
+    "n": 44,
+    "rate": 0.20454545454545456
+   },
+   "N": {
+    "mismatches": 72,
+    "n": 716,
+    "rate": 0.1005586592178771
+   }
+  }
+ },
+ "verdict": "CALIBRATION_FAILED"
+}
