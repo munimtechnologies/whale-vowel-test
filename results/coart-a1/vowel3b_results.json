@@ -1,0 +1,117 @@
+{
+ "brier": 0.12562500000000001,
+ "calibration": {
+  "R": 1000,
+  "W0": {
+   "asym_reject": 0.053,
+   "asym_reverse_reject": 0.04,
+   "delta": 0.0,
+   "mcnemar_reject": 0.046
+  },
+  "W1_full": {
+   "asym_reject": 0.457,
+   "asym_reverse_reject": 0.0,
+   "delta": 0.15782122905027934,
+   "mcnemar_reject": 0.389
+  },
+  "W1_half": {
+   "asym_reject": 0.202,
+   "asym_reverse_reject": 0.007,
+   "delta": 0.07891061452513967,
+   "mcnemar_reject": 0.156
+  },
+  "delta_full": 0.15782122905027934
+ },
+ "counts": {
+  "C": {
+   "b": 9,
+   "both": 2,
+   "c": 7,
+   "n": 44,
+   "neither": 26
+  },
+  "N": {
+   "b": 31,
+   "both": 35,
+   "c": 37,
+   "n": 716,
+   "neither": 613
+  }
+ },
+ "data": {
+  "bytes": 346249,
+  "issues": {
+   "bad_deltasec": 0,
+   "no_type": 0,
+   "other_whale": 179,
+   "out_of_window": 158,
+   "rows": 1097
+  },
+  "md5": "5e971e33d2e78dc817ae48751c533866",
+  "url": "https://raw.githubusercontent.com/Project-CETI/coda-vowel-phonology/be751b8761c87813754dba10ad7068a9e71367c0/focal-coarticulation-metadata.csv"
+ },
+ "main": {
+  "asym": {
+   "a_crit": 0.14829862874555613,
+   "obs": 0.05383443372270188,
+   "p_high": 0.2747272924590274,
+   "p_low": 0.7382327269418997
+  },
+  "delta_first": 0.15782122905027934,
+  "delta_last": 0.10398679532757746,
+  "k_change": 16,
+  "k_nochange": 68,
+  "mcnemar_change": {
+   "b": 9,
+   "c": 7,
+   "p_high": 0.4018096923828125,
+   "p_low": 0.7727508544921875
+  }
+ },
+ "n_paired": 760,
+ "n_rows": 760,
+ "predictions": {
+  "Q1": {
+   "outcome": true,
+   "prior": 0.7
+  },
+  "Q2": {
+   "outcome": false,
+   "prior": 0.5
+  },
+  "Q3": {
+   "outcome": true,
+   "prior": 0.6
+  },
+  "Q4": {
+   "outcome": true,
+   "prior": 0.95
+  }
+ },
+ "repro": {
+  "expected": {
+   "mfC": 11,
+   "mfN": 66,
+   "mlC": 9,
+   "mlN": 72,
+   "nC": 44,
+   "nN": 716
+  },
+  "got": {
+   "mfC": 11,
+   "mfN": 66,
+   "mlC": 9,
+   "mlN": 72,
+   "nC": 44,
+   "nN": 716
+  },
+  "ok": true
+ },
+ "seconds": 1.7,
+ "settings": {
+  "R": 1000,
+  "alpha": 0.05,
+  "seed": 20261122
+ },
+ "verdict": "UNDERPOWERED"
+}
