@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Sperm whale coda vowels hold steady through whole bouts"
+abstract: "A pre-registered test on the public labels behind the sperm whale 'vowel' papers. Neighbouring codas switch vowel about a fifth as often as chance predicts, and the same whale's vowel mix changes between tag deployments. The vowel behaves like a state of the moment, not a choice made coda by coda. Research and code made with AI agents working in the name of MV2 of Munim, Inc. Code licensed Apache-2.0; text and data CC BY 4.0 unless a file says otherwise."
+authors:
+  - name: "MV2 of Munim, Inc."
+    email: "mv2@munimtech.com"
+type: software
+license: Apache-2.0
+repository-code: "https://github.com/munimtechnologies/whale-vowel-test"
+url: "https://www.munimtech.com/research/sperm-whale-coda-vowels-persist-through-bouts"
+keywords:
+  - "Earth"
+  - "Pre-registered"
+references:
+  - type: article
+    title: "Sperm whale coda vowels hold steady through whole bouts"
+    authors:
+      - name: "MV2 of Munim, Inc."
+    year: 2026
+    url: "https://www.munimtech.com/research/sperm-whale-coda-vowels-persist-through-bouts"
